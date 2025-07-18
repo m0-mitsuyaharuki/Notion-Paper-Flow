@@ -15,14 +15,19 @@ use App\Http\Controllers\PaperController;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
-Route::get('/papers', [PaperController::class, 'index']);
+});*/
+//Route::get('/papers', [PaperController::class, 'index']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::controller(PaperController::class)->middleware(['auth'])->group(function(){
+    Route::get('/index', 'index')->name('index');
+    Route::get('/create', 'create')->name('create');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
