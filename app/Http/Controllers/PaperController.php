@@ -7,8 +7,13 @@ use App\Models\Paper;
 
 class PaperController extends Controller
 {
-    public function index(Paper $paper)
+    public function index(Paper $papers)
     {
-        return $paper->get();
+        return view('posts.index')->with(['papers' => $papers->get()]);
+    }
+
+    public function create(Paper $paper)
+    {
+        return view('posts.create');
     }
 }
