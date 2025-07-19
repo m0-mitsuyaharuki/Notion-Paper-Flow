@@ -5,10 +5,10 @@
                 {{ __('論文一覧') }}
             </h2>
             
-                <button onclick="window.location.href='{{ route('create') }}'"
-                    class="px-4 py-2 bg-red-600 text-white rounded-md">
-                    新しい論文をアップロード
-                </button>
+            <button onclick="window.location.href='{{ route('create') }}'"
+                class="px-4 py-2 bg-red-500 text-white rounded-md">
+                新しい論文をアップロード
+            </button>
         </div>
     </x-slot>
 
