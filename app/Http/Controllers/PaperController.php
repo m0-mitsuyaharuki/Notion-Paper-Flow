@@ -12,7 +12,7 @@ class PaperController extends Controller
         return view('posts.index')->with(['papers' => $papers->get()]);
     }
 
-    public function create(Paper $paper)
+    public function create()
     {
         return view('posts.create');
     }

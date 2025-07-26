@@ -1,13 +1,14 @@
 <x-app-layout>
     <x-slot name="header">
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
         <div class="flex justify-between items-center">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 {{ __('論文一覧') }}
             </h2>
             
             <button onclick="window.location.href='{{ route('create') }}'"
-                class="px-4 py-2 bg-red-500 text-white rounded-md">
-                新しい論文をアップロード
+                class="px-4 py-2 bg-indigo-500 text-white rounded-md">
+                {{ __('新しい論文をアップロード') }}
             </button>
         </div>
     </x-slot>
